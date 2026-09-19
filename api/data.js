@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   }
   
   const JSONBIN_KEY = "$2a$10$cmR.OJ9OgytXFIQjNCR3o.ScH572wakolkRZOIuMnwB8gZNArqd3G";
-  const JSONBIN_BIN = "6aab2dfcac6210b5ad676ae";
+  const JSONBIN_BIN = "6aab2dfcac6210605ad676ae";
   const JSONBIN_URL = "https://api.jsonbin.io/v3/b/" + JSONBIN_BIN;
   
   try {
