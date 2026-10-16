@@ -7,8 +7,8 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
   
-  const JSONBIN_KEY = "$2a$10$Ci0wkaa4MfKwFkairLQvee7kYfyZcSm.lnEo2lxWx5zQCm480Drdi";
-  const JSONBIN_BIN = "6aab2dfcac6210605ad676ae";
+  const JSONBIN_KEY = "$2a$10$cmR.OJ9OgytXFIQjNCR3o.ScH572wakolkRZOIuMnwB8gZNArqd3G";
+  const JSONBIN_BIN = "6ad2418fffdf5d16053714d82";
   const JSONBIN_URL = "https://api.jsonbin.io/v3/b/" + JSONBIN_BIN;
   
   try {
@@ -77,4 +77,4 @@ function mergeData(oldData, newData) {
     ...newData,
     users: finalUsers
   };
-        }
+          }
