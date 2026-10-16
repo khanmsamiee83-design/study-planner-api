@@ -14,7 +14,10 @@ export default async function handler(req, res) {
   try {
     if (req.method === 'GET') {
       const r = await fetch(JSONBIN_URL + "/latest", {
-        headers: { "X-Access-Key": JSONBIN_KEY, "X-Bin-Meta": "false" }
+        headers: { 
+          "X-Master-Key": JSONBIN_KEY,
+          "X-Bin-Meta": "false" 
+        }
       });
       const data = await r.json();
       return res.status(200).json(data);
@@ -22,7 +25,10 @@ export default async function handler(req, res) {
     
     if (req.method === 'PUT') {
       const getRes = await fetch(JSONBIN_URL + "/latest", {
-        headers: { "X-Access-Key": JSONBIN_KEY, "X-Bin-Meta": "false" }
+        headers: { 
+          "X-Master-Key": JSONBIN_KEY,
+          "X-Bin-Meta": "false" 
+        }
       });
       const currentData = await getRes.json();
       const newData = req.body;
@@ -32,7 +38,7 @@ export default async function handler(req, res) {
         method: "PUT",
         headers: { 
           "Content-Type": "application/json", 
-          "X-Access-Key": JSONBIN_KEY 
+          "X-Master-Key": JSONBIN_KEY 
         },
         body: JSON.stringify(merged)
       });
@@ -71,4 +77,4 @@ function mergeData(oldData, newData) {
     ...newData,
     users: finalUsers
   };
-}
+        }
